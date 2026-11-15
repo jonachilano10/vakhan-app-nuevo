@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-vakhan-black font-sans font-normal text-white antialiased;
+  }
+
+  h1,
+  h2,
+  h3 {
+    @apply font-semibold tracking-tight;
+  }
+
+  a {
+    @apply text-gray-200 transition-colors duration-150 hover:text-white;
+  }
+
+  button {
+    @apply font-medium transition-colors duration-150;
+    box-shadow: none;
+  }
+
+  input,
+  select,
+  textarea {
+    @apply min-h-10 rounded-input border border-vakhan-light-gray bg-vakhan-black px-3 py-2 text-white outline-none transition-colors placeholder:text-gray-600 focus:border-vakhan-red focus:ring-2 focus:ring-vakhan-red/20;
+    box-shadow: none;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex min-h-10 items-center justify-center rounded-button border border-vakhan-red bg-vakhan-red px-5 py-2 text-sm font-semibold text-white hover:bg-[#B91B1B] focus:outline-none focus:ring-2 focus:ring-vakhan-red/30 disabled:cursor-not-allowed disabled:opacity-40;
+    box-shadow: none;
+  }
+
+  .btn-secondary {
+    @apply inline-flex min-h-10 items-center justify-center rounded-button border border-vakhan-light-gray bg-transparent px-5 py-2 text-sm font-medium text-gray-200 hover:bg-vakhan-light-gray hover:text-white focus:outline-none focus:ring-2 focus:ring-white/10 disabled:cursor-not-allowed disabled:opacity-40;
+    box-shadow: none;
+  }
+
+  .card {
+    @apply rounded-card border border-vakhan-light-gray bg-vakhan-dark-gray;
+    box-shadow: none;
+  }
+
+  .input {
+    @apply min-h-10 w-full rounded-input border border-vakhan-light-gray bg-vakhan-black px-3 py-2 text-white outline-none focus:border-vakhan-red focus:ring-2 focus:ring-vakhan-red/20;
+    box-shadow: none;
+  }
+
+  .eyebrow {
+    @apply text-xs font-medium uppercase tracking-label text-gray-500;
+  }
+
+  .student-shell input,
+  .student-shell select,
+  .student-shell textarea,
+  .student-shell .btn-primary,
+  .student-shell .btn-secondary {
+    @apply min-h-12;
+  }
+
+  .trainer-shell input,
+  .trainer-shell select,
+  .trainer-shell textarea,
+  .trainer-shell .btn-primary,
+  .trainer-shell .btn-secondary {
+    @apply min-h-10;
+  }
+
+  .modal-overlay {
+    @apply fixed inset-0 z-50 flex items-center justify-center bg-black/80;
+  }
+
+  .modal-content {
+    @apply card max-h-screen w-full max-w-2xl overflow-y-auto p-5 sm:p-6;
+  }
+}
